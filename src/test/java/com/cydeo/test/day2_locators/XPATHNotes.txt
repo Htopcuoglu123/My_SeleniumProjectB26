@@ -1,0 +1,118 @@
+
+                   =============  XPATH  ==============
+
+- xpath is one of 8 locators in Selenium.
+- xpath allows us to create custom locators using any given attribute and value.
+- We can also use the text of the web element create locator using XPATH.
+
+    - xpath syntax is different than cssSelector.
+
+There are 2 types of XPATH:
+
+#1- ABSOLUTE XPATH:
+    - Starts with single slash "/"
+    - Starts looking from the root/parent/ascendent element in the HTML page
+    - It starts from the html tag and it goes 1 by 1 until we reach the desired web element
+    - Usually it is very very long, and it is NOT dependable.
+    - Because it is long, it is not stable, therefore it is NOT used much.
+    - It is not recommended to use it as locator in our code.
+
+    <html>
+        <head>
+            <title> Title of the page </title>
+        </head>
+        <body>
+            <div>
+                <div>
+                    <a href=""> TEXT </a>
+                </div>
+            </div>
+
+        </body>
+
+    </html>
+
+ex: locating link <a> tag above using absolute xpath
+
+    /html/body/div/div/a
+
+- With any minimal change in the HTML code, this locator will be breaking. Therefore, not good practice to use ABSOLUTE XPATH.
+
+
+#2- RELATIVE XPATH:
+    - Starts with double slash "//"
+    - "//" means that you can start anywhere in the HTML page
+    - Since we are allowed to start anywhere in the HTML page, relative xpath is very dependable and useful
+    - The only time your relative xpath is supposed to be breaking is if ONLY the attribute value you use is changed.
+
+--> MAIN SYNTAX
+
+    //tagName[@attribute='value']
+
+
+ex: <a href="https://www.tesla.com" id="uh7" name="bb95"> TESLA </a>
+
+#1- locating with href    : //a[@href='https://www.tesla.com']
+#2- locating with id     : //a[@id='uh7']
+#3- locating with name     : //a[@name='bb95']
+
+
+    - We are NOT limited with id, name, class, or href attributes.
+    - We can use any custom attribute and their value with XPATH locator.
+
+
+COMMONLY USED XPATH SYNTAXES:
+
+    #1 - //tagName[@attribute='value']
+    #2 - //tagName[contains(@attribute, 'value')]
+    #3 - //tagName[.='text']
+    #4 - //*[@attribute='value']
+
+EXPLANATIONS:
+    #1- //tagName[@attribute='value']
+
+    - We are saying, get me the web element with given tagName, where attribute value is as provided.
+
+    #2- //tagName[contains(@attribute, 'value')]
+
+    - Looks for the tagName that has matching or containing attribute value
+
+    #3- //tagName[.='text']
+
+    - This locator will return the web element with given text.
+    - Works in similar way to linkText locator. But linkText only works with links.
+    - Xpath will work with any web element.
+    - . --> stands for text in xpath
+
+    #4- //*[@attribute='value']
+
+    - * --> is used when we do not want to search by a tagName.
+    - If we want to be less specific, we pass *, and it will only match and return whatever attribute and value is provided.
+
+
+     === HOW TO GO FROM CHILD TO PARENT and PARENT TO CHILD IN XPATH? ===
+
+-We go from parent to child using "/“
+-We use "/.." this goes from child to parent
+-We use ”/following-sibling::tagname” this goes to the next sibling.
+-We use “/preceding-sibling::tagname”this goes to previous sibling.
+
+
+            ==== CSS vs XPATH ====
+
+-Css is slightly faster than xpath on IE, other browsers it is negligible.
+-Css is easier to read and write
+
+1.css cannot locate using text of web elements
+xpath://*[.="Don't Click!"]
+css: NA
+
+2.It cannot find from matches base on index (different parent)
+xpath:--> (xpathFormula)[indexNumber]
+css: NA
+
+3.child to parent NA
+//button/../ --> goes back to parent
+CSS : NA
+
+xpath can do more than css, but it is little bit complex

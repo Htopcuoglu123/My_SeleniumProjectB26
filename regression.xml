@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Suite" >
+   <test name="Selenium Test">
+       <classes>
+           <class name="com.cydeo.test.day2_locators.FacebookTitleVerification"></class>
+       </classes>
+   </test>
+    
+    <test name="TestNG intro">
+     <classes>
+         <class name="com.cydeo.test.day7_testNG_dropDown_Alert_iFrame.TestNG_Selenium"></class>
+         <class name="com.cydeo.test.day1_selenium_intro.SeleniumTest"></class>
+     </classes>   
+    </test>
+    <test name="test package">
+        <packages>
+            <package name="com.cydeo.test.day3_Css_getText_getAttribute"></package>
+        </packages>
+    </test>
+</suite>
+

@@ -1,0 +1,63 @@
+ DROPDOWNS:
+Q: How many types of dropdowns do we have?
+A: 2
+#1- HTML Dropdowns (non-select)
+    - If the dropdowns are created using anything other than <select> tag, it is a "non-select dropdown"
+#2- Select Dropdowns
+    - If dropdown is created using <select> tag, it is a select dropdown
+    - To be able to use the Select class from Selenium, it has to be <select> dropdown.
+Q: How do you handle dropdowns?
+1. First I will inspect and see what type of dropdown it is.
+2. If it is an HTML dropdown (non-select), I will just locate with any locator and click.
+3. If it is <select> dropdown, I will use the Select class coming from the Selenium library.
+Q: Syntax of how do we handle Select dropdown?
+1. We create object of Select class
+2. We need to locate the dropdown <select> tag itself and pass it into the Select constructor.
+    Select dropdownName = new Select(driver.findElement(By.LOCATOR));
+3. We can use the object for handling the dropdowns.
+    dropdownName.selectByVisibleText("content(text) btw opening and closing <option> tag");
+    dropdownName.selectByValue("value of value attribute");
+    dropdownName.selectByIndex(int); // starts from 0
+Q: How do we select options from a Select dropdown?
+A: We can use 3 methods provided by Selenium library
+    - selectByIndex
+    - selectByValue
+    - selectByVisibleText
+Q: How do we get currently selected option?
+A: .getFirstSelectedOption();
+   - this method can be used to get the default value
+   - also can be used to get the value after selecting something.
+   - return type is single WebElement
+Q: How do we get all of the options from a Select dropdown?
+A: .getOptions method
+   - return type is List<WebElement>
+- ALERT:
+Q: What is an alert?
+A: - Some pop-ups happening on the page.
+   - Developers use alerts to get users attention to deliver some content.
+
+Q: How many types of alerts do we have?
+A: We have 2 types of Alerts.
+1. HTML Alert (Non-JS Alert)
+    - This will be present inside of the <html> page as some web element.
+    - There is nothing special about this alert, we just locate and click
+2. Javascript Alert
+    - We have 3 types of Javascript alerts
+    #1- Information/Warning Alert:
+        - User can ONLY accept this alert.
+    #2- Confirmation Alert:
+        - User can accept and decline.
+    #3- Prompt Alert:
+        - User can accept, decline, and also sendKeys.
+Q: How do we handle Alerts using Selenium?
+A: - I will check the type of the alert.
+   - After making sure it is a JS alert, I will use Alert from Selenium library to switch drivers focus to the Alert itself.
+
+    Alert alert = driver.switchTo().alert();
+ alert.accept();
+    alert.dismiss();
+    alert.sendKeys("string");
+Links for Alert Practices:  - https://chercher.tech/practice/practice-pop-ups-selenium-webdriver
+                            - https://demoqa.com/alerts
+
+

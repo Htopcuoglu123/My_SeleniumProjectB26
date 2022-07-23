@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Command line suite]" verbose="0">
+  <test thread-count="5" name="Command line test(failed)" verbose="0">
+    <classes>
+      <class name="com.cydeo.test.day10_utiliies_windows.T1_Iframe_CRM_AppreciationTest">
+        <methods>
+          <include name="setUpMethod"/>
+          <include name="tearDown"/>
+          <include name="sendingAppreciationMsg"/>
+        </methods>
+      </class> <!-- com.cydeo.test.day10_utiliies_windows.T1_Iframe_CRM_AppreciationTest -->
+      <class name="com.cydeo.test.day7_testNG_dropDown_Alert_iFrame.TestNG_Selenium">
+        <methods>
+          <include name="setUpMethod"/>
+          <include name="tearDown"/>
+          <include name="googleTitle"/>
+        </methods>
+      </class> <!-- com.cydeo.test.day7_testNG_dropDown_Alert_iFrame.TestNG_Selenium -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

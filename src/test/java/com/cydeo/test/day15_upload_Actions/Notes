@@ -1,0 +1,44 @@
+
+Q: How do we handle downloads using Selenium?
+
+A:  - We do NOT. We can NOT handle(verify) downloads using only Selenium library.
+    - We can click to a link on a browser page.
+    - But once the file is downloaded, it will be out of scope for our selenium.
+
+
+Q: How do we handle uploads using Selenium?
+
+A:  - We can upload a file by simply passing the path of the file we want to upload.
+    - We use sendKeys, and pass the "path" as a String into the WebElement that can upload.
+
+
+- We just need to find the path of the file and pass it as a String.
+
+Windows:
+
+#1- Right click on the file
+#2- Select "properties"
+#3- Go to "Security" tab
+#4- Get the path from "Object name"
+
+For windows, either double backward "\\" or single forward "/" works.
+
+String path ="C:\\Users\\hayat\\Desktop\\note.txt
+
+Mac:
+
+#1- Right click on the file
+#2- Press and hold "option" button from keyboard
+#3- Select "copy file as path name" option
+#4- Paste into IntelliJ
+
+--------------------------------------------------------------------------------
+
+Actions:
+    - Actions class is used to handle "advanced" mouse and keyboard actions.
+    - such as:
+        - moveToElement
+        - doubleClick
+        - dragAndDrop
+        - clickAndHold
+        - contextClick

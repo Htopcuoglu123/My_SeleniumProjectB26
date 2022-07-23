@@ -1,0 +1,46 @@
+Q: What is properties file?
+A: - It is just another type of file just like .txt, and .pdf whatever.
+- But this file has .properties extention.
+Q: Why do we use properties file? What makes it different then other type
+of files?
+A: - It stores value in "key=value" format
+- We are trying to avoid hard coding some of the important test data
+in our project.
+Q: What is hard coding?
+A: - Writing data directly inside of the source code is called hard
+coding.
+- If I have to go inside of my .java class to change the data, it
+means I hard coded that data.
+-----------------------------------------------------------------
+Q: How do we read from properties type of file?
+A: #1- Create Properties class' object.
+Properties properties = new Properties();
+#2- Create FileInputStream object to open file as a stream in Java
+memory.
+FileInputStream file = new
+FileInputStream("pathOfTheFileWeAreTryingToOpen");
+#3- Load "properties" object with the "file" we opened using
+FileInputStream
+properties.load(file);
+#4- We can use properties.getProperty method to read from the file we
+loaded.
+(configuration.properties)
+properties.getProperty("key");  ---> value
+browser ----> chrome
+env ----> qa1.vytrack.com
+username ----> tester5@cydeo.com
+--------------------------------------------------------------------------
+------
+Q: Which part of this is hard coded in our code : key=value
+A: - "key" is what we write in our .java class.
+- Therefore "key" will not change, and is hard coded.
+- "value" is inside of our configuration.properties file.
+- We can change the value from outside of our code
+Q: What is ConfigurationReader? Why did we create this?
+A: - To create utility method and be able to read from
+configuration.properties file by just calling
+our ConfigurationReader.getProperty("key");
+- We created the re-usable .getProperty() utility method in
+ConfigurationReader class
+- We can call this method in any class and any package when we need to
+read from configuration.properties file
